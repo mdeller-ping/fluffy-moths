@@ -58,9 +58,10 @@
 
 $now = date(DATE_ATOM);
 $nextMonth  = date(DATE_ATOM, mktime(0, 0, 0, date("m")+1,   date("d"),   date("Y")));
-$ipAddress = $_SERVER['HTTP_X_Forwarded_For'];
+$ipAddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
 
 echo $ipAddress;
+echo $now;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
