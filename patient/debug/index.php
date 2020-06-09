@@ -1,9 +1,4 @@
-<?php
-  $consentId = $_GET['consent'];
-  if (! $consentId) {
-    header ("Location: /");
-  }
-?><!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
