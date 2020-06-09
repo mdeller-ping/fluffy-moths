@@ -89,6 +89,7 @@
   curl_close($curl);
   
   $responseData = json_decode($response);
+  $response = json_encode($responseData, JSON_PRETTY_PRINT);
 
   foreach ($responseData->_embedded->consents as $item) {
     echo "<tr><td><a href='/consents/inspect/?consent=" . $item->id . "'>" . $item->id . "</a></td><td>" . $item->status . "</td><td>" . $item->createdDate . "</td></tr>\n";
