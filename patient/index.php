@@ -28,7 +28,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto mt-4">
         <li class="nav-item">
-          <a class="nav-link" href="/records/">My Information</a>
+          <a class="nav-link" href="/">My Information</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/consents/">My Consents</a>
@@ -51,6 +51,78 @@
     </div>
   </div>
   <!-- /hero banner -->
+
+    <div class="container mt-5">
+
+<?php
+
+  $curl = curl_init();
+
+  curl_setopt_array($curl, array(
+    CURLOPT_URL => "https://int-dg.anyhealth-demo.ping-eng.com:8443/epic/Patient/TUKRxL29bxE9lyAcdTIyrWC6Ln5gZ-z7CLr2r-2SY964B",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_SSL_VERIFYHOST => false,
+    CURLOPT_SSL_VERIFYPEER => false,
+    CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_HTTPHEADER => array(
+      "Accept: application/json",
+      "Authorization: Bearer { \"iss\": \"AnyHealth\", \"aud\": \"EpicFHIR\", \"client_id\": \"PatientPortal\", \"sub\": \"ff99e13b-6ff8-40ef-9ce5-1cc5ef891d3e\", \"active\": true, \"scope\": \"pd:consents:unpriv\" }"
+    ),
+  ));
+
+  $response = curl_exec($curl);
+  $err = curl_error($curl);
+
+  if($err) {
+    echo "cURL Error #:" . $err . "\n";
+  }
+
+  curl_close($curl);
+  
+  $responseData = json_decode($response);
+  $response = json_encode($responseData, JSON_PRETTY_PRINT);
+
+?>
+
+<div class="card">
+  <div class="card-header">
+    <?php echo $responseData->name[0]->text ?>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><?php echo $responseData->birthDate ?></li>
+    <li class="list-group-item"><?php echo $responseData->gender ?></li>
+    <li class="list-group-item">
+      <?php echo $responseData->address[0]->line[0] ?><br />
+      <?php echo $responseData->address[0]->line[1] ?><br />
+      <?php echo $responseData->address[0]->city ?>, 
+      <?php echo $responseData->address[0]->state ?> 
+      <?php echo $responseData->address[0]->postalCode ?>
+      <?php echo $responseData->address[0]->country ?>
+    </li>
+    <li class="list-group-item"><?php echo $responseData->telecom[0]->value ?></li>
+    <li class="list-group-item"><?php echo $responseData->telecom[1]->value ?></li>
+  </ul>
+</div>
+
+<br />
+<br />
+
+<a href="#" onclick="toggleRaw();">Toggle Raw</a>
+
+<br />
+<br />
+
+<pre class='alert alert-primary' style='height: 400px; display:none' id='rawDiv'><?php echo $response ?></pre>
+
+<br />
+<br />
+
+    </div>
 
   <!-- footer -->
   <nav class="navbar navbar-light bg-light mt-5">
@@ -79,22 +151,22 @@
   </nav>
   <!-- /footer -->
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+  </div>
+  <!-- /page container -->
+
+  <!-- jquery and bootstrap js libraries -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
+  <!-- JavaScript Cookie plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 
   <script>
-    let nonce = Math.floor(Math.random() * 100000);
-    $("a[href='https://patient.novant.demoenvi.com']").attr('href', 'https://patient.novant.demoenvi.com?nonce=' + nonce);
+    function toggleRaw() {
+      $('#rawDiv').toggle();
+    }
   </script>
 </body>
 
