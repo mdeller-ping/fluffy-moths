@@ -43,7 +43,16 @@
   </nav>
   <!-- /navigation -->
 
-    <div class="container mt-5">
+  <!-- hero banner -->
+  <div class="jumbotron jumbotron-fluid mb-n1">
+    <div class="container">
+      <h1 class="display-4">Welcome to Novant Health</h1>
+      <p class="lead">We are an integrated system of physician practices, hospitals, outpatient centers, and more – each element committed to delivering a remarkable healthcare experience for you and your family.</p>
+    </div>
+  </div>
+  <!-- /hero banner -->
+
+    <div class="container mt-5" style="height: 500px;">
     <table class="table table-bordered">
       <thead>
         <tr>
