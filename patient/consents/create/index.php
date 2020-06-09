@@ -54,14 +54,18 @@
 
   <div class="container mt-5">
 
-    <form>
-    <div class="form-row">
-      <div class="col">
-        <input type="checkbox" class="form-control" id="checkboxProvider">
-        <label class="form-check-label" for="checkBoxProvider">Provider</label>
-      </div>
-    </div>
-  </form>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="inputProvider">
+      <label class="form-check-label" for="inputProvider">
+        Consent to Provider Access
+      </label>
+   </div>
+   <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="inputSpouse">
+      <label class="form-check-label" for="inputSpouse">
+        Consent to Spousal Access
+      </label>
+   </div>
 
   </div>
 
