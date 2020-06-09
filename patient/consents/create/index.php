@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   <form method="POST">
     <button type="submit" class="btn btn-primary mb-2" name="consentPhysician" value="true">Physician Consent</button>
-    <button type="submit" class="btn btn-primary mb-2" name="sonsentSpouse" value="true">Spousal Consent</button>
+    <button type="submit" class="btn btn-primary mb-2" name="consentSpouse" value="true">Spousal Consent</button>
   </form>
 
 <?php } ?>
