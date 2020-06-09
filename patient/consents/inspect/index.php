@@ -43,7 +43,7 @@
           Actions
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="revoke/?consent=<?php echo $consentId ?>">Revoke</a>
+          <a class="dropdown-item" href="/consents/revoke/?consent=<?php echo $consentId ?>">Revoke</a>
           <a class="dropdown-item" href="#">Enable</a>
         </div>
       </li>
