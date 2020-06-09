@@ -6,55 +6,42 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <!-- local css -->
-  <link href="/css/stylesheet.css" rel="stylesheet" />
-
-  <!-- Custom fonts for this template -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css"
-    rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
-    type="text/css" />
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link type="image/x-icon" href="https://www.novanthealth.org/favicon.ico" rel="shortcut icon">
+  <title>Novant Health</title>
 </head>
 
 <body>
 
-  <!-- page container -->
-  <div class="container-fluid">
+  <!-- navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #512D6D;">
+    <a class="navbar-brand mb-1" href="https://www.novant.demoenvi.com/">
+      <img src="https://www.novanthealth.org/Portals/92/logo-large.png" height="50" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <!-- navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/records/">My Info</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/consents/">My Consents</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Actions
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href='/consents/revoke/?consent=<?php echo $consentId ?>'>Revoke</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- /navigation -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto mt-4">
+        <li class="nav-item">
+          <a class="nav-link" href="/records/">My Information</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/consents/">My Consents</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav text-right mt-4">
+        <li class="nav-item mr-2">
+          <a class="btn btn-outline-warning btn" href="https://pa.novant.demoenvi.com/pa/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /navigation -->
 
     <div class="container mt-5">
 
