@@ -112,6 +112,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <?php } ?>
 
+  <br />
+  <br />
+  
   <a href="#" onclick="toggleRaw();">Toggle Raw</a>
 
   <br />
