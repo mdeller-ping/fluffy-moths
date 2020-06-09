@@ -33,14 +33,6 @@
         <li class="nav-item">
           <a class="nav-link" href="/consents/">My Consents</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Actions
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/consents/create/">Create Consent</a>
-          </div>
-        </li>
       </ul>
       <ul class="navbar-nav text-right mt-4">
         <li class="nav-item mr-2">
@@ -59,74 +51,6 @@
     </div>
   </div>
   <!-- /hero banner -->
-
-    <div class="container mt-5" style="height: 500px; overflow: auto;">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <td>Consent ID</td><td>Status</td><td>Date Created</td>
-        </tr>
-      </thead>
-<?php
-
-  $curl = curl_init();
-
-  curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://int-docker.anyhealth-demo.ping-eng.com:1443/consent/v1/consents",
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_ENCODING => "",
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 0,
-    CURLOPT_FOLLOWLOCATION => true,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => "GET",
-    CURLOPT_SSL_VERIFYHOST => false,
-    CURLOPT_SSL_VERIFYPEER => false,
-    CURLOPT_HTTPHEADER => array(
-      "Authorization: Bearer { \"iss\": \"PatientPortal\", \"aud\": \"ConsentAPI\", \"client_id\": \"PatientPortal\", \"sub\": \"ff99e13b-6ff8-40ef-9ce5-1cc5ef891d3e\", \"active\": true, \"scope\": \"pd:consents:unpriv\" }"
-    ),
-  ));
-
-  $response = curl_exec($curl);
-  $err = curl_error($curl);
-
-  if($err) {
-    echo "cURL Error #:" . $err . "\n";
-  }
-
-  curl_close($curl);
-  
-  $responseData = json_decode($response);
-  $response = json_encode($responseData, JSON_PRETTY_PRINT);
-
-  foreach ($responseData->_embedded->consents as $item) {
-    echo "<tr><td><a href='/consents/inspect/?consent=" . $item->id . "'>" . $item->id . "</a></td><td>" . $item->status . "</td><td>" . $item->createdDate . "</td></tr>\n";
-  }
-
-?>
-      </table>
-
-      </div>
-
-      <div class="container">
-
-      <br />
-      <br />
-
-      <a href="#" onclick="toggleRaw();">Toggle Raw</a>
-
-      <br />
-      <br />
-
-      <div style="display:none" id="rawDiv">
-        <pre class='alert alert-warning'>GET https://int-docker.anyhealth-demo.ping-eng.com:1443/consent/v1/consents</pre>
-        <pre class='alert alert-primary' style="height: 500px;"><?php echo $response ?></pre>
-      </div>
-
-      <br />
-      <br />
-
-</div>
 
 
 
