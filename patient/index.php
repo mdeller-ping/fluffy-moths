@@ -36,7 +36,7 @@
       </ul>
       <ul class="navbar-nav text-right mt-4">
         <li class="nav-item mr-2">
-          <a class="btn btn-outline-warning btn" href="https://pa.novant.demoenvi.com/pa/logout">Logout</a>
+          <a class="btn btn-outline-warning btn" href="https://pa.novant.demoenvi.com/pa/oidc/logout">Logout</a>
         </li>
       </ul>
     </div>
