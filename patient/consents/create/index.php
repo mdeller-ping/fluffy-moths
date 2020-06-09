@@ -60,8 +60,6 @@ $now = date(DATE_ATOM);
 $nextMonth  = date(DATE_ATOM, mktime(0, 0, 0, date("m")+1,   date("d"),   date("Y")));
 $ipAddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
 
-echo $ipAddress;
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   $curl = curl_init();
