@@ -67,10 +67,16 @@
       </label>
    </div>
 
+   <br/>
+
+<?php
+$nextMonth  = mktime(0, 0, 0, date("m")+1,   date("d"),   date("Y"));
+?>
+
    <div class="form-group row">
     <label for="inputExpiration" class="col-sm-2 col-form-label">Expiration Date</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputExpiration" placeholder="Expiration Date">
+      <input type="text" class="form-control" id="inputExpiration" value="<?php echo $nextMonth ?>">
     </div>
   </div>
 
