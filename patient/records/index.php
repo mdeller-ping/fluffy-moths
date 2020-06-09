@@ -115,17 +115,32 @@
 
     </div>
 
-    <!-- Footer -->
-    <footer class="footer bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-            <p class="text-muted small mb-4 mb-lg-0">&copy; Ping Identity 2020. All Rights Reserved.</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- /Footer -->
+  <!-- footer -->
+  <nav class="navbar navbar-light bg-light mt-5">
+    <div class="container">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="https://patient.novant.demoenvi.com/registration/">Sign up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="memberTools" href="https://patient.novant.demoenvi.com">Member login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact Center</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Patient Bill of Rights</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Privacy Statement</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /footer -->
 
   </div>
   <!-- /page container -->
