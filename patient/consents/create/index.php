@@ -61,8 +61,6 @@ $nextMonth  = date(DATE_ATOM, mktime(0, 0, 0, date("m")+1,   date("d"),   date("
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  echo "in here";
-
   $curl = curl_init();
 
   curl_setopt_array($curl, array(
@@ -84,15 +82,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   ));
   
   $response = curl_exec($curl);
+  $responseData = json_decode($response);
+  $response = json_encode($responseData, JSON_PRETTY_PRINT);
   
-
   $err = curl_error($curl);
 
   if($err) {
     echo "cURL Error #:" . $err . "\n";
+  } else {
+    echo $response;
   }
 
-  echo $response;
   curl_close($curl);
 
 } else {
@@ -115,8 +115,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
    <br/>
 
-
-
    <div class="form-group row">
     <label for="inputExpiration" class="col-sm-2 col-form-label">Expiration Date</label>
     <div class="col-sm-10">
@@ -128,6 +126,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </form>
 
 <?php } ?>
+
+
+  <a href="#" onclick="toggleRaw();">Toggle Raw</a>
+
+  <br />
+  <br />
+
+  <div style="display:none" id="rawDiv">
+    <pre class='alert alert-warning'>GET https://int-docker.anyhealth-demo.ping-eng.com:1443/consent/v1/consents</pre>
+    <pre class='alert alert-primary' style="height: 500px;"><?php echo $response ?></pre>
+  </div>
 
   </div>
 
