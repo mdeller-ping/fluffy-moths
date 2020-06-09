@@ -100,6 +100,12 @@
     <li class="list-group-item"><?php echo $responseData->status ?></li>
     <li class="list-group-item"><?php echo $responseData->createdDate ?></li>
     <li class="list-group-item"><?php echo $responseData->updatedDate ?></li>
+    <li class="list-group-item">
+      <?php echo $responseData->definition->id ?>
+      <?php echo $responseData->definition->version ?>
+      <?php echo $responseData->definition->currentVersion ?>
+      <?php echo $responseData->definition->locale ?>
+    </li>
   </ul>
 </div>
 
