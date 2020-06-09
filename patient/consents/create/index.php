@@ -54,7 +54,7 @@
 
   <div class="container mt-5">
 
-  <form>
+  <form method="POST">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="inputProvider">
       <label class="form-check-label" for="inputProvider">
