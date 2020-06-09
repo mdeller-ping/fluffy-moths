@@ -117,7 +117,10 @@
 <br />
 <br />
 
-<pre class='alert alert-primary' style='height: 400px; display:none' id='rawDiv'><?php echo $response ?></pre>
+<div style="display:none" id="rawDiv">
+  <pre class='alert alert-warning'>GET https://int-dg.anyhealth-demo.ping-eng.com:8443/epic/Patient/TUKRxL29bxE9lyAcdTIyrWC6Ln5gZ-z7CLr2r-2SY964B</pre>
+  <pre class='alert alert-primary'><?php echo $response ?></pre>
+</div>
 
 <br />
 <br />
