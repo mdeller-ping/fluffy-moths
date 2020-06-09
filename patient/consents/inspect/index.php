@@ -91,6 +91,26 @@
 ?>
     </div>
 
+    <div class="container">
+
+<br />
+<br />
+
+<a href="#" onclick="toggleRaw();">Toggle Raw</a>
+
+<br />
+<br />
+
+<div style="display:none" id="rawDiv">
+  <pre class='alert alert-warning'>GET https://int-docker.anyhealth-demo.ping-eng.com:1443/consent/v1/consents</pre>
+  <pre class='alert alert-primary' style="height: 500px;"><?php echo $response ?></pre>
+</div>
+
+<br />
+<br />
+
+</div>
+
   <!-- footer -->
   <nav class="navbar navbar-light bg-light mt-5">
     <div class="container">
