@@ -52,7 +52,7 @@
   </div>
   <!-- /hero banner -->
 
-    <div class="container mt-5" style="height: 500px;">
+    <div class="container mt-5" style="height: 500px; overflow: auto;">
     <table class="table table-bordered">
       <thead>
         <tr>
