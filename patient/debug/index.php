@@ -67,20 +67,17 @@
 
       <div class="card">
         <div class="card-header">
-          <?php echo $responseData->id ?>
+          All Headers
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><?php echo $responseData->status ?></li>
-          <li class="list-group-item"><?php echo $responseData->createdDate ?></li>
-          <li class="list-group-item"><?php echo $responseData->updatedDate ?></li>
-          <li class="list-group-item">
-            id: <?php echo $responseData->definition->id ?><br>
-            version: <?php echo $responseData->definition->version ?><br>
-            current version: <?php echo $responseData->definition->currentVersion ?><br>
-            locale: <?php echo $responseData->definition->locale ?>
-          </li>
-          <li class="list-group-item"><?php echo $responseData->dataText ?></li>
-          <li class="list-group-item"><?php echo $responseData->purposeText ?></li>
+<?php
+
+  foreach (getallheaders() as $key=>$value) { ?>
+    <li class="list-group-item"><?php echo $key?>: <?php echo $value ?></li>
+  <?php }
+
+          
+?>
         </ul>
       </div>
 
