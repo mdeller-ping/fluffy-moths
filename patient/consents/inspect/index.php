@@ -100,10 +100,6 @@
     <li class="list-group-item"><?php echo $responseData->status ?></li>
     <li class="list-group-item"><?php echo $responseData->createdDate ?></li>
     <li class="list-group-item"><?php echo $responseData->updatedDate ?></li>
-    <li class="list-group-item"><?php echo $responseData->definition ?></li>
-    <li class="list-group-item"><?php echo $responseData->dataText ?></li>
-    <li class="list-group-item"><?php echo $responseData->purposeText ?></li>
-
   </ul>
 </div>
 
