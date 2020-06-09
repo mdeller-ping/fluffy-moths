@@ -97,18 +97,10 @@
     <?php echo $responseData->name[0]->text ?>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><?php echo $responseData->birthDate ?></li>
-    <li class="list-group-item"><?php echo $responseData->gender ?></li>
-    <li class="list-group-item">
-      <?php echo $responseData->address[0]->line[0] ?><br />
-      <?php echo $responseData->address[0]->line[1] ?><br />
-      <?php echo $responseData->address[0]->city ?>, 
-      <?php echo $responseData->address[0]->state ?> 
-      <?php echo $responseData->address[0]->postalCode ?>
-      <?php echo $responseData->address[0]->country ?>
-    </li>
-    <li class="list-group-item"><?php echo $responseData->telecom[0]->value ?></li>
-    <li class="list-group-item"><?php echo $responseData->telecom[1]->value ?></li>
+    <li class="list-group-item"><?php echo $responseData->id ?></li>
+    <li class="list-group-item"><?php echo $responseData->status ?></li>
+    <li class="list-group-item"><?php echo $responseData->createdDate ?></li>
+    <li class="list-group-item"><?php echo $responseData->updatedDate ?></li>
   </ul>
 </div>
 
