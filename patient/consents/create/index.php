@@ -70,7 +70,7 @@
    <br/>
 
 <?php
-$nextMonth  = mktime(0, 0, 0, date("m")+1,   date("d"),   date("Y"));
+$nextMonth  = date(DATE_ATOM, mktime(0, 0, 0, date("m")+1,   date("d"),   date("Y")));
 ?>
 
    <div class="form-group row">
