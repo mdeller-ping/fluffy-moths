@@ -61,6 +61,8 @@ $nextMonth  = date(DATE_ATOM, mktime(0, 0, 0, date("m")+1,   date("d"),   date("
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+  echo "in here";
+  
   $curl = curl_init();
 
   curl_setopt_array($curl, array(
@@ -88,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if($err) {
     echo "cURL Error #:" . $err . "\n";
   }
-  
+
   echo $response;
 
 } else {
