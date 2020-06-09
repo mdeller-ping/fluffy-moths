@@ -55,9 +55,37 @@
   <div class="container mt-5">
 
 <?php
+
+$now = date(DATE_ATOM);
+$nextMonth  = date(DATE_ATOM, mktime(0, 0, 0, date("m")+1,   date("d"),   date("Y")));
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  echo "Form yo";
-}
+
+  $curl = curl_init();
+
+  curl_setopt_array($curl, array(
+    CURLOPT_URL => "https://int-docker.anyhealth-demo.ping-eng.com:1443/consent/v1/consents",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "POST",
+    CURLOPT_POSTFIELDS =>"{\n  \"status\": \"accepted\",\n  \"audience\": \"AnyHealth-EMR\",\n  \"definition\": {\n    \"id\": \"EMR-Access\",\n    \"version\": \"1.8\",\n    \"locale\": \"en\"\n  },\n  \"dataText\": \"Individuals and Roles requesting access to your medical records\",\n  \"purposeText\": \"Used to allow Roles and Individuals to have access to all or specific elements of your medical record\",\n  \"data\": {\n     \"implicit\": [ \n     \t{ \n     \t\t\"relationship\": \"physician\", \n     \t\t\"provider\": \"EpicFHIR\", \n     \t\t\"identifier\":\"1eaed605-c824-477a-a2ce-9c2a160c170c\", \n     \t\t\"timestamp\": \"{{timestamp}}\",\n     \t\t\"expires\": \"{{expires}}\"\n \t\t} ]\n  },\n  \"consentContext\": {\n\t  \"captureMethod\": \"PatientPortal Web\",\n\t  \"subject\": {\n\t    \"userAgent\": \"Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B367 Safari/531.21.10\",\n\t    \"ipAddress\": \"10.1.0.89\"\n\t  },\n\t  \"authorizationService\": {\n\t    \"name\": \"anyHealth\",\n\t    \"client_id\": \"PatientPortal\"\n\t  }\n\t}\n}",
+    CURLOPT_HTTPHEADER => array(
+      "Content-Type: application/json",
+      "Authorization: Bearer { \"iss\": \"PatientPortal\", \"aud\": \"ConsentAPI\", \"client_id\": \"PatientPortal\", \"sub\": \"ff99e13b-6ff8-40ef-9ce5-1cc5ef891d3e\", \"active\": true, \"scope\": \"pd:consents:unpriv\" }"
+    ),
+  ));
+  
+  $response = curl_exec($curl);
+  
+  curl_close($curl);
+  echo $response;
+
+} else {
+
 ?>
 
   <form method="POST">
@@ -76,9 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
    <br/>
 
-<?php
-$nextMonth  = date(DATE_ATOM, mktime(0, 0, 0, date("m")+1,   date("d"),   date("Y")));
-?>
+
 
    <div class="form-group row">
     <label for="inputExpiration" class="col-sm-2 col-form-label">Expiration Date</label>
@@ -89,6 +115,8 @@ $nextMonth  = date(DATE_ATOM, mktime(0, 0, 0, date("m")+1,   date("d"),   date("
 
   <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
 </form>
+
+<?php } ?>
 
   </div>
 
