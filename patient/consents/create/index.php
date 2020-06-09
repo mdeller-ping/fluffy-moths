@@ -82,6 +82,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $response = curl_exec($curl);
   
   curl_close($curl);
+
+  $err = curl_error($curl);
+
+  if($err) {
+    echo "cURL Error #:" . $err . "\n";
+  }
+  
   echo $response;
 
 } else {
