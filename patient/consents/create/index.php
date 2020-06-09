@@ -54,6 +54,7 @@
 
   <div class="container mt-5">
 
+  <form>
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="inputProvider">
       <label class="form-check-label" for="inputProvider">
@@ -79,6 +80,10 @@ $nextMonth  = date(DATE_ATOM, mktime(0, 0, 0, date("m")+1,   date("d"),   date("
       <input type="text" class="form-control" id="inputExpiration" value="<?php echo $nextMonth ?>">
     </div>
   </div>
+
+  <input type="submit" class="btn btn-primary">Submit</input>
+
+</form>
 
   </div>
 
