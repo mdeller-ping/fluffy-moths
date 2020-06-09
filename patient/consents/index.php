@@ -111,7 +111,7 @@
       <br />
 
       <div style="display:none" id="rawDiv">
-        <pre class='alert alert-warning'>GET https://int-dg.anyhealth-demo.ping-eng.com:8443/epic/Patient/TUKRxL29bxE9lyAcdTIyrWC6Ln5gZ-z7CLr2r-2SY964B</pre>
+        <pre class='alert alert-warning'>GET https://int-docker.anyhealth-demo.ping-eng.com:1443/consent/v1/consents</pre>
         <pre class='alert alert-primary' style="height: 500px;"><?php echo $response ?></pre>
       </div>
 
