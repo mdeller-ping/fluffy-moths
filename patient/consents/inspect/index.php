@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+  $consentId = $_GET['consent'];
+  if (! $consentId) {
+    header ("Location: /");
+  }
+?><!doctype html>
 <html lang="en">
 
 <head>
@@ -85,10 +90,29 @@
   
   $responseData = json_decode($response);
   $response = json_encode($responseData, JSON_PRETTY_PRINT);
-  echo "<h1 class='display-5'>" . $consentId . "</h1>";
-  echo "<pre class='alert alert-primary' style='height: 400px;'>" . $response . "</pre>";
-
 ?>
+
+<div class="card">
+  <div class="card-header">
+    <?php echo $responseData->name[0]->text ?>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><?php echo $responseData->birthDate ?></li>
+    <li class="list-group-item"><?php echo $responseData->gender ?></li>
+    <li class="list-group-item">
+      <?php echo $responseData->address[0]->line[0] ?><br />
+      <?php echo $responseData->address[0]->line[1] ?><br />
+      <?php echo $responseData->address[0]->city ?>, 
+      <?php echo $responseData->address[0]->state ?> 
+      <?php echo $responseData->address[0]->postalCode ?>
+      <?php echo $responseData->address[0]->country ?>
+    </li>
+    <li class="list-group-item"><?php echo $responseData->telecom[0]->value ?></li>
+    <li class="list-group-item"><?php echo $responseData->telecom[1]->value ?></li>
+  </ul>
+</div>
+
+
     </div>
 
     <div class="container">
