@@ -97,6 +97,9 @@
 ?>
       </table>
 
+      </div>
+
+
       <br />
       <br />
 
@@ -114,7 +117,6 @@
       <br />
 
 
-    </div>
 
   <!-- footer -->
   <nav class="navbar navbar-light bg-light mt-5">
@@ -154,6 +156,12 @@
 
   <!-- JavaScript Cookie plugin -->
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+  <script>
+    function toggleRaw() {
+      $('#rawDiv').toggle();
+    }
+  </script>
 
 </body>
 
