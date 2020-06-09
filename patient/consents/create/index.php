@@ -81,7 +81,7 @@ $nextMonth  = date(DATE_ATOM, mktime(0, 0, 0, date("m")+1,   date("d"),   date("
     </div>
   </div>
 
-  <input type="submit" class="btn btn-primary">Submit</input>
+  <input type="submit" class="btn btn-primary" value="Submit">
 
 </form>
 
