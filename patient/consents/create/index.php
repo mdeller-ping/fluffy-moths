@@ -63,6 +63,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   $curl = curl_init();
 
+  if ($_POST['consentPhysician']) {
+    echo "physician";
+  } else if ($_POST['consentSpouse']) {
+    echo "spouse";
+  }
+
   $postFields = "{\n  \"status\": \"accepted\",\n  \"audience\": \"AnyHealth-EMR\",\n  \"definition\": {\n    \"id\": \"EMR-Access\",\n    \"version\": \"1.8\",\n    \"locale\": \"en\"\n  },\n  \"dataText\": \"Individuals and Roles requesting access to your medical records\",\n  \"purposeText\": \"Used to allow Roles and Individuals to have access to all or specific elements of your medical record\",\n  \"data\": {\n     \"implicit\": [ \n     \t{ \n     \t\t\"relationship\": \"physician\", \n     \t\t\"provider\": \"EpicFHIR\", \n     \t\t\"identifier\":\"1eaed605-c824-477a-a2ce-9c2a160c170c\", \n     \t\t\"timestamp\": \"$now\",\n     \t\t\"expires\": \"$nextMonth\"\n \t\t} ]\n  },\n  \"consentContext\": {\n\t  \"captureMethod\": \"PatientPortal Web\",\n\t  \"subject\": {\n\t    \"userAgent\": \"Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B367 Safari/531.21.10\",\n\t    \"ipAddress\": \"10.1.0.89\"\n\t  },\n\t  \"authorizationService\": {\n\t    \"name\": \"anyHealth\",\n\t    \"client_id\": \"PatientPortal\"\n\t  }\n\t}\n}";
 
   curl_setopt_array($curl, array(
@@ -83,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ),
   ));
   
-  $response = curl_exec($curl);
+  // $response = curl_exec($curl);
   $responseData = json_decode($response);
   $response = json_encode($responseData, JSON_PRETTY_PRINT);
   
