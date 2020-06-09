@@ -54,6 +54,12 @@
 
   <div class="container mt-5">
 
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  echo "Form yo"
+}
+?>
+
   <form method="POST">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="inputProvider">
