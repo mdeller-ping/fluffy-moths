@@ -132,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <br />
 
   <div style="display:none" id="rawDiv">
-    <pre class='alert alert-warning'>GET https://int-docker.anyhealth-demo.ping-eng.com:1443/consent/v1/consents</pre>
+    <pre class='alert alert-warning'>POST https://int-docker.anyhealth-demo.ping-eng.com:1443/consent/v1/consents</pre>
     <pre class='alert alert-primary' style="height: 500px;"><?php echo $response ?></pre>
   </div>
 
