@@ -94,13 +94,16 @@
 
 <div class="card">
   <div class="card-header">
-    <?php echo $responseData->name[0]->text ?>
+    <?php echo $responseData->id ?>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><?php echo $responseData->id ?></li>
     <li class="list-group-item"><?php echo $responseData->status ?></li>
     <li class="list-group-item"><?php echo $responseData->createdDate ?></li>
     <li class="list-group-item"><?php echo $responseData->updatedDate ?></li>
+    <li class="list-group-item"><?php echo $responseData->definition ?></li>
+    <li class="list-group-item"><?php echo $responseData->dataText ?></li>
+    <li class="list-group-item"><?php echo $responseData->purposeText ?></li>
+
   </ul>
 </div>
 
