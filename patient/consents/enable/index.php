@@ -32,8 +32,6 @@
 
   curl_close($curl);
 
-  echo $response;
-
-  // header('Location: /consents/');
+  header('Location: /consents/');
 
 ?>
