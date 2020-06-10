@@ -58,10 +58,23 @@
   </div>
   <!-- /hero banner -->
 
-  <div class="container">
-    <div class="alert-success">
-      <p class="lead">MyChart is a secure and easy tool for managing your health. With a mobile device or a desktop computer, you can use MyChart anytime to find a doctor, see your medical records, schedule and participate in a video visit with a healthcare provider and do much more. Using MyChart's new features can help you get healthier and reach your wellness goals. </p>
-    </div>
+  <div class="container mt-5">
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+      et dolore
+      magna aliqua. Lorem dolor sed viverra ipsum. Amet nisl suscipit adipiscing bibendum est ultricies integer.
+      Molestie a iaculis at erat pellentesque. Ornare arcu odio ut sem nulla. Tristique senectus et netus et malesuada
+      fames. In nibh mauris cursus mattis molestie a iaculis at. Massa tempor nec feugiat nisl pretium fusce id. In
+      metus vulputate eu scelerisque felis imperdiet. Porta lorem mollis aliquam ut porttitor leo a. Viverra accumsan in
+      nisl nisi. Turpis in eu mi bibendum neque egestas congue quisque egestas. Sagittis id consectetur purus ut
+      faucibus pulvinar elementum integer enim. Neque viverra justo nec ultrices dui sapien eget mi proin. Maecenas
+      pharetra convallis posuere morbi.</p>
+    <p class="lead">Viverra vitae congue eu consequat ac. Nam libero justo laoreet sit. Malesuada proin libero nunc
+      consequat
+      interdum varius sit. Facilisi morbi tempus iaculis urna id. Sed arcu non odio euismod lacinia at quis risus.
+      Molestie at elementum eu facilisis. Justo donec enim diam vulputate ut. Duis ut diam quam nulla porttitor massa.
+      Elementum pulvinar etiam non quam lacus suspendisse faucibus interdum. Et odio pellentesque diam volutpat. Non
+      quam lacus suspendisse faucibus interdum. Nunc lobortis mattis aliquam faucibus purus in massa. Sagittis id
+      consectetur purus ut faucibus pulvinar.</p>
   </div>
 
   <!-- footer -->
