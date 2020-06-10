@@ -39,15 +39,6 @@
         <li class="nav-item">
           <a class="nav-link" href="/consents/">My Consents</a>
         </li>
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Actions
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/consents/revoke/?consent=<?php echo $consentId ?>">Revoke</a>
-          <a class="dropdown-item" href="/consents/enable/?consent=<?php echo $consentId ?>">Enable</a>
-        </div>
-      </li>
       </ul>
       <ul class="navbar-nav text-right mt-4">
         <li class="nav-item mr-2">
