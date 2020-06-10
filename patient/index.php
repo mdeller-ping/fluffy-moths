@@ -58,8 +58,8 @@
   </div>
   <!-- /hero banner -->
 
-    <div class="container mt-5">
-
+    <div class="container mt-5 alert-success">
+      <p class="lead">MyChart is a secure and easy tool for managing your health. With a mobile device or a desktop computer, you can use MyChart anytime to find a doctor, see your medical records, schedule and participate in a video visit with a healthcare provider and do much more. Using MyChart's new features can help you get healthier and reach your wellness goals. </p>
     </div>
 
   <!-- footer -->
