@@ -70,6 +70,10 @@
 
 <?php
 
+  $epicUUID = $_SERVER['X_EPIC_UUID'];
+
+  echo $epicUUID;
+
   $curl = curl_init();
 
   curl_setopt_array($curl, array(
