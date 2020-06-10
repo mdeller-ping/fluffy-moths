@@ -72,7 +72,7 @@
 
   $epicUUID = $_SERVER['EPIC_UUID'];
 
-  echo $epicUUID;
+  echo ":::" + $epicUUID;
 
   $curl = curl_init();
 
