@@ -71,9 +71,6 @@
 <?php
 
   $epicUUID = $_SERVER['HTTP_EPIC_UUID'];
-  $ipAddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
-
-  echo ":::" + $ipAddress;
 
   $curl = curl_init();
 
@@ -90,7 +87,7 @@
     CURLOPT_CUSTOMREQUEST => "GET",
     CURLOPT_HTTPHEADER => array(
       "Accept: application/json",
-      "Authorization: Bearer { \"iss\": \"AnyHealth\", \"aud\": \"EpicFHIR\", \"client_id\": \"PatientPortal\", \"sub\": \"ff99e13b-6ff8-40ef-9ce5-1cc5ef891d3e\", \"active\": true, \"scope\": \"pd:consents:unpriv\" }"
+      "Authorization: Bearer { \"iss\": \"AnyHealth\", \"aud\": \"EpicFHIR\", \"client_id\": \"PatientPortal\", \"sub\": \"$epicUUID\", \"active\": true, \"scope\": \"pd:consents:unpriv\" }"
     ),
   ));
 
