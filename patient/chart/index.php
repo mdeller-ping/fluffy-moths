@@ -71,8 +71,9 @@
 <?php
 
   $epicUUID = $_SERVER['HTTP_EPIC_UUID'];
+  $ipAddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
 
-  echo ":::" + $epicUUID;
+  echo ":::" + $ipAddress;
 
   $curl = curl_init();
 
