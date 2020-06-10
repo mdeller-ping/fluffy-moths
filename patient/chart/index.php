@@ -28,16 +28,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto mt-4">
         <li class="nav-item">
-          <a class="nav-link" href="/">Patient Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/chart/">My Chart</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/debug/">Headers</a>
+          <a class="nav-link" href="/">My Information</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/consents/">My Consents</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Actions
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/consents/create/">Create Consent</a>
+          </div>
         </li>
       </ul>
       <ul class="navbar-nav text-right mt-4">
@@ -58,26 +60,30 @@
   </div>
   <!-- /hero banner -->
 
-    <div class="container mt-5">
-
+    <div class="container mt-5" style="height: 500px; overflow: auto;">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td>Consent ID</td><td>Status</td><td>Date Created</td>
+        </tr>
+      </thead>
 <?php
 
   $curl = curl_init();
 
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://int-dg.anyhealth-demo.ping-eng.com:8443/epic/Patient/TUKRxL29bxE9lyAcdTIyrWC6Ln5gZ-z7CLr2r-2SY964B",
+    CURLOPT_URL => "https://int-docker.anyhealth-demo.ping-eng.com:1443/consent/v1/consents",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
     CURLOPT_TIMEOUT => 0,
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "GET",
     CURLOPT_SSL_VERIFYHOST => false,
     CURLOPT_SSL_VERIFYPEER => false,
-    CURLOPT_CUSTOMREQUEST => "GET",
     CURLOPT_HTTPHEADER => array(
-      "Accept: application/json",
-      "Authorization: Bearer { \"iss\": \"AnyHealth\", \"aud\": \"EpicFHIR\", \"client_id\": \"PatientPortal\", \"sub\": \"ff99e13b-6ff8-40ef-9ce5-1cc5ef891d3e\", \"active\": true, \"scope\": \"pd:consents:unpriv\" }"
+      "Authorization: Bearer { \"iss\": \"PatientPortal\", \"aud\": \"ConsentAPI\", \"client_id\": \"PatientPortal\", \"sub\": \"ff99e13b-6ff8-40ef-9ce5-1cc5ef891d3e\", \"active\": true, \"scope\": \"pd:consents:unpriv\" }"
     ),
   ));
 
@@ -93,45 +99,36 @@
   $responseData = json_decode($response);
   $response = json_encode($responseData, JSON_PRETTY_PRINT);
 
+  foreach ($responseData->_embedded->consents as $item) {
+    echo "<tr><td><a href='/consents/inspect/?consent=" . $item->id . "'>" . $item->id . "</a></td><td>" . $item->status . "</td><td>" . $item->createdDate . "</td></tr>\n";
+  }
+
 ?>
+      </table>
 
-<div class="card">
-  <div class="card-header">
-    <?php echo $responseData->name[0]->text ?>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><?php echo $responseData->birthDate ?></li>
-    <li class="list-group-item"><?php echo $responseData->gender ?></li>
-    <li class="list-group-item">
-      <?php echo $responseData->address[0]->line[0] ?><br />
-      <?php echo $responseData->address[0]->line[1] ?><br />
-      <?php echo $responseData->address[0]->city ?>, 
-      <?php echo $responseData->address[0]->state ?> 
-      <?php echo $responseData->address[0]->postalCode ?>
-      <?php echo $responseData->address[0]->country ?>
-    </li>
-    <li class="list-group-item"><?php echo $responseData->telecom[0]->value ?></li>
-    <li class="list-group-item"><?php echo $responseData->telecom[1]->value ?></li>
-  </ul>
+      </div>
+
+      <div class="container">
+
+      <br />
+      <br />
+
+      <a href="#" onclick="toggleRaw();">Toggle Raw</a>
+
+      <br />
+      <br />
+
+      <div style="display:none" id="rawDiv">
+        <pre class='alert alert-warning'>GET https://int-docker.anyhealth-demo.ping-eng.com:1443/consent/v1/consents</pre>
+        <pre class='alert alert-primary' style="height: 500px;"><?php echo $response ?></pre>
+      </div>
+
+      <br />
+      <br />
+
 </div>
 
-<br />
-<br />
 
-<a href="#" onclick="toggleRaw();">Toggle Raw</a>
-
-<br />
-<br />
-
-<div style="display:none" id="rawDiv">
-  <pre class='alert alert-warning'>GET https://int-dg.anyhealth-demo.ping-eng.com:8443/epic/Patient/TUKRxL29bxE9lyAcdTIyrWC6Ln5gZ-z7CLr2r-2SY964B</pre>
-  <pre class='alert alert-primary' style="height: 500px;"><?php echo $response ?></pre>
-</div>
-
-<br />
-<br />
-
-    </div>
 
   <!-- footer -->
   <nav class="navbar navbar-light bg-light mt-5">
@@ -177,6 +174,7 @@
       $('#rawDiv').toggle();
     }
   </script>
+
 </body>
 
 </html>
