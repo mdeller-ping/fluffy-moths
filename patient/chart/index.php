@@ -70,7 +70,7 @@
 
 <?php
 
-  $epicUUID = $_SERVER['EPIC_UUID'];
+  $epicUUID = $_SERVER['HTTP_EPIC_UUID'];
 
   echo ":::" + $epicUUID;
 
