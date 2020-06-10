@@ -52,22 +52,13 @@
   <!-- hero banner -->
   <div class="jumbotron jumbotron-fluid mb-n1">
     <div class="container">
-      <h1 class="display-4">Welcome to Novant Health</h1>
-      <p class="lead">We are an integrated system of physician practices, hospitals, outpatient centers, and more – each element committed to delivering a remarkable healthcare experience for you and your family.</p>
+      <h1 class="display-4">Get access to your personal health record and other resources with MyChart</h1>
+      <p class="lead">MyChart is a secure and easy tool for managing your health. With a mobile device or a desktop computer, you can use MyChart anytime to find a doctor, see your medical records, schedule and participate in a video visit with a healthcare provider and do much more. Using MyChart's new features can help you get healthier and reach your wellness goals. </p>
     </div>
   </div>
   <!-- /hero banner -->
 
   <div class="container mt-5">
-    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-      et dolore
-      magna aliqua. Lorem dolor sed viverra ipsum. Amet nisl suscipit adipiscing bibendum est ultricies integer.
-      Molestie a iaculis at erat pellentesque. Ornare arcu odio ut sem nulla. Tristique senectus et netus et malesuada
-      fames. In nibh mauris cursus mattis molestie a iaculis at. Massa tempor nec feugiat nisl pretium fusce id. In
-      metus vulputate eu scelerisque felis imperdiet. Porta lorem mollis aliquam ut porttitor leo a. Viverra accumsan in
-      nisl nisi. Turpis in eu mi bibendum neque egestas congue quisque egestas. Sagittis id consectetur purus ut
-      faucibus pulvinar elementum integer enim. Neque viverra justo nec ultrices dui sapien eget mi proin. Maecenas
-      pharetra convallis posuere morbi.</p>
     <p class="lead">Viverra vitae congue eu consequat ac. Nam libero justo laoreet sit. Malesuada proin libero nunc
       consequat
       interdum varius sit. Facilisi morbi tempus iaculis urna id. Sed arcu non odio euismod lacinia at quis risus.
